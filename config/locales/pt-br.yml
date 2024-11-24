@@ -1,8 +1,17 @@
 pt-BR:
-
+  time:
+      formats:
+        short: "%H:%M" # Example: 14:30 (24-hour clock format)
   date:
     formats:
       default: "%d/%m/%Y" # Example format: DD/MM/YYYY
+    abbr_day_names: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"]
+    month_names: ["", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+  datetime:
+    distance_in_words:
+      x_days:
+        one: "há 1 dia"
+        other: "há %{count} dias"
 
   activerecord:
     attributes:
