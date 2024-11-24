@@ -21,10 +21,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const submitButton = form.querySelector('[type="submit"]');
     form.onsubmit = function () {
       if (termsCheckbox.checked) {
-        submitButton.innerHTML = 'Submitting...';
+        submitButton.innerHTML = 'Enviando...';
         return true;
       } else {
-        alert('Please review and accept the Terms of Service');
+        alert('Por favor, aceite os Termos');
         submitButton.removeAttribute('disabled');
         submitButton.classList.remove('disabled');
         return false;

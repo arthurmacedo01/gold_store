@@ -13,10 +13,9 @@
     </div>
     <div class="flex items-center gap-x-4 xl:gap-x-8 w-full justify-center lg:justify-start">
       <%= link_to root_path, class: 'absolute lg:relative left-1/2 lg:left-0 lg:-translate-x-0 -translate-x-1/2 flex items-center space-x-3' do %>
-        <%= image_tag "logo_small_no_label.svg" %>
+        <%= image_tag "logo.png", class: "mx-auto w-52" %>
         <span class="uppercase font-sans font-semibold mb-0 dark:text-sand text-body lg:text-body-sm xl:text-body-sm"><%= Spree::Store.default.name %></span>
       <% end %>
-
       <% categories = taxonomies.first %>
       <% navMobileClasses = '
         categories-menu bg-white
@@ -32,7 +31,6 @@
         dark:lg:text-sand
         lg:p-0'
       %>
-
       <nav class="<%= navMobileClasses + navDesktopClasses %> text-" data-drawer-target="drawer">
         <button type="button" class="w-8 h-8 self-start -ml-[5px] lg:hidden" aria-controls="navbar-default" aria-expanded="false" data-action="click->drawer#toggle">
           <span class="sr-only">Close main menu</span>
@@ -40,11 +38,9 @@
             <use xlink:href="<%= image_path('remixicon.symbol.svg') %>#ri-close-line"></use>
           </svg>
         </button>
-
         <div class="block my-12">
           <%= render 'shared/search/search_bar', taxons: taxons, taxon: taxon, :locals => { :additional_classes => 'lg:hidden', search_input_id: 'mobile-search-input-area', results_list_id: 'autocomplete-results-mobile' } %>
         </div>
-
         <% cache [I18n.locale, categories, taxon] do %>
           <%= render(TaxonsTreeComponent.new(
             root_taxon: categories.root,
@@ -54,18 +50,16 @@
             current_item_classes: 'text-solidus-red',
             )) if categories %>
         <% end %>
-
         <div class="lg:hidden mt-auto">
-        <div class="flex justify-between">          
-          <%= render "shared/navigation/theme_switcher" %>
-
-          <%= link_to "https://solidus.io", class:"flex flex-row items-center gap-1" do %>
-            <span class="font-semibold text-black dark:text-white">solidus.io</span>
-            <svg class='w-5 h-5 fill-black dark:fill-white'>
-              <use xlink:href="<%= image_path('remixicon.symbol.svg') %>#ri-arrow-right-up-line"></use>
-            </svg>
-          <% end %>
-        </div>
+          <div class="flex justify-between">
+            <%= render "shared/navigation/theme_switcher" %>
+            <%= link_to "https://solidus.io", class:"flex flex-row items-center gap-1" do %>
+              <span class="font-semibold text-black dark:text-white">solidus.io</span>
+              <svg class='w-5 h-5 fill-black dark:fill-white'>
+                <use xlink:href="<%= image_path('remixicon.symbol.svg') %>#ri-arrow-right-up-line"></use>
+              </svg>
+            <% end %>
+          </div>
         </div>
       </nav>
     </div>

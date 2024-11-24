@@ -502,6 +502,10 @@ GEM
       solidus_webhooks (~> 0.2)
     solidus_sample (4.4.1)
       solidus_core (= 4.4.1)
+    solidus_stripe (5.0.2)
+      solidus_core (>= 3.2, < 5)
+      solidus_support (~> 0.8)
+      stripe (~> 8.0)
     solidus_support (0.10.3)
     solidus_webhooks (0.4.2)
       solidus_api (>= 2.0.0, < 5)
@@ -524,6 +528,7 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.2)
+    stripe (8.7.0)
     tailwindcss-rails (3.0.0)
       railties (>= 7.0.0)
       tailwindcss-ruby
@@ -607,6 +612,7 @@ DEPENDENCIES
   solidus_admin (>= 0.2)
   solidus_auth_devise (~> 2.5)
   solidus_paypal_commerce_platform (~> 1.0)
+  solidus_stripe (~> 5.0)
   solidus_support
   sprockets-rails
   stimulus-rails

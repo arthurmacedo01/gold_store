@@ -94,3 +94,5 @@ gem "solidus_paypal_commerce_platform", "~> 1.0"
 gem "solidus_admin", ">= 0.2"
 
 gem "sidekiq", "~> 7.3"
+
+gem "solidus_stripe", "~> 5.0"

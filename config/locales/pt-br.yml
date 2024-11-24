@@ -1,4 +1,9 @@
 pt-BR:
+
+  date:
+    formats:
+      default: "%d/%m/%Y" # Example format: DD/MM/YYYY
+
   activerecord:
     attributes:
       spree/address:
@@ -720,6 +725,7 @@ pt-BR:
     email: Email
     empty: Vazio
     empty_cart: Esvaziar o Carrinho
+    empty_cart_message: "Você não tem itens no seu carrinho."
     enable_mail_delivery: Habilitar envio de email
     end: Fim
     ending_in: Finalizando
