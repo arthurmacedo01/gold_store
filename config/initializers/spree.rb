@@ -4,6 +4,7 @@
 # Solidus version defaults for preferences that are not overridden
 Spree.load_defaults "4.4.1"
 
+
 Spree.config do |config|
   # Core:
   # Default currency for new sites
