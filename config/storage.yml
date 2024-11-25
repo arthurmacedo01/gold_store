@@ -4,7 +4,7 @@ test:
 
 local:
   service: Disk
-  root: <%= ENV['RAILWAY_VOLUME_MOUNT_PATH'] %>
+  root: <%= Rails.root.join("storage") %>
 
 amazon:
   service: S3

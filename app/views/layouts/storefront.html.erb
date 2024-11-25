@@ -7,24 +7,22 @@
     <%== meta_data_tags %>
     <%= canonical_tag(current_store.url) %>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= javascript_include_tag 'solidus_starter_frontend' %>
     <%= stylesheet_link_tag 'solidus_starter_frontend', media: 'screen' %>
-
     <%= javascript_importmap_tags %>
+    <%# <%= favicon_link_tag '/storefront_favicon.svg', type: 'image/svg+xml', rel: 'icon' %>
+    <%# <%= favicon_link_tag '/storefront_favicon.ico', rel: 'icon', type: 'image/ico' %>
 
-    <%= favicon_link_tag '/storefront_favicon.svg', type: 'image/svg+xml', rel: 'icon' %>
-    <%= favicon_link_tag '/storefront_favicon.ico', rel: 'icon', type: 'image/ico' %>
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/icon.png">
 
     <script>
       const lsTheme = localStorage.getItem('theme') || 'light'
       document.documentElement.classList.add(lsTheme)
     </script>
-
     <%= yield :head %>
   </head>
-
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-turbo="false"  data-controller="drawer">
     <div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
       <%= render 'layouts/header', taxons: @taxons, taxon: @taxon %>
