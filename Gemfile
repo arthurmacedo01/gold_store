@@ -97,3 +97,4 @@ gem "sidekiq", "~> 7.3"
 
 gem "solidus_stripe", "~> 5.0"
 gem "aws-sdk-s3"
+gem "dotenv-rails"
