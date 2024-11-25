@@ -96,3 +96,4 @@ gem "solidus_admin", ">= 0.2"
 gem "sidekiq", "~> 7.3"
 
 gem "solidus_stripe", "~> 5.0"
+gem "aws-sdk-s3"
