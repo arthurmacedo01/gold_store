@@ -8,6 +8,12 @@
         <%= render "shared/social_icons" %>
       </div>
     </div>
+    <!-- Informações adicionais -->
+    <div class="text-center mt-10">
+      <p class="text-xs text-gray-500 dark:text-gray-400">
+        © <%= Time.current.year %> <%= Spree::Store.default.name %>. Todos os direitos reservados.
+      </p>      
+    </div>
     <%
       available_locales = current_store.available_locales.map do |locale|
         [
