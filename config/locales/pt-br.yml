@@ -14,6 +14,10 @@ pt-BR:
       x_days:
         one: "há 1 dia"
         other: "há %{count} dias"
+        pt-BR:
+      about_x_hours:
+        one: "há cerca de uma hora"
+        other: "há cerca de %{count} horas"
 
   activerecord:
     attributes:
