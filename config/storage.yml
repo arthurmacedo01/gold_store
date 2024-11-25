@@ -4,7 +4,7 @@ test:
 
 local:
   service: Disk
-  root: <%= ENV['RAILWAY_VOLUME_MOUNT_PATH'] %>
+  root: <%= Rails.root.join("storage") %>
 
 amazon:
   service: S3
@@ -12,8 +12,6 @@ amazon:
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   region: us-east-1
   bucket: gold-store-<%= ENV["ENV"] %>
-
-
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
