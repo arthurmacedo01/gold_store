@@ -1,0 +1,8 @@
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">
+      <%= solidus_icon('fa fa-calendar') %>
+    </span>
+  </div>
+  <%= f.date_field date_attr, value: f.object.public_send(date_attr)&.strftime('%Y-%m-%d'), class: 'form-control' %>
+</div>

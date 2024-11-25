@@ -1,7 +1,9 @@
-pt-BR:
+pt-BR:  
   time:
       formats:
         short: "%H:%M" # Example: 14:30 (24-hour clock format)
+        solidus:
+          long: "%d de %B de %Y às %H:%M"
   date:
     formats:
       default: "%d/%m/%Y" # Example format: DD/MM/YYYY
@@ -125,6 +127,7 @@ pt-BR:
         name: Nome
       spree/shipment:
         number: Número
+        tracking: Rastreio
       spree/state:
         abbr: Abreviação
         name: Nome
@@ -422,6 +425,12 @@ pt-BR:
         other: "%{count} erros impediram o %{resource} de ser salvo:"
 
   number:
+    currency:
+      format:
+        unit: "R$"
+        separator: ","
+        delimiter: "."
+        format: "%u %n"
     percentage:
       format:
         precision: 1
@@ -505,6 +514,8 @@ pt-BR:
           cancel: cancelar
           resume: retomar
           resend: Reenviar
+      prices:
+        any_country: Todos Países
       user:
         account: Conta
         addresses: Endereçamento
@@ -575,6 +586,7 @@ pt-BR:
     calculator: Calculadora
     calculator_settings_warning: Se você alterar o tipo de calculadora, deve-se primeiro confirmar a alteração antes de editar as configurações.
     cancel: Cancelar
+    cancel_inventory: Cancelar Inventário
     canceled: Cancelado
     canceled_at: Cancelado em
     canceler: Cancelado por
@@ -1527,6 +1539,7 @@ pt-BR:
     value: Valor
     variant: Variante
     variant_placeholder: Escolha um produto
+    variant_search_placeholder: Escolha um produto  
     variants: Variantes
     version: Versão
     void: Vazio
@@ -1547,3 +1560,5 @@ pt-BR:
     apply_code: Aplicar Código
     shop_now: Comprar Agora
     remove: Remover
+    date_picker:
+      format: "%Y-%m-%d"
