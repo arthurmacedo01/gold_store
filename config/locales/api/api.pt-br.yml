@@ -1,0 +1,23 @@
+pt-BR:
+  spree:
+    api:
+      could_not_transition: O recurso %{resource} não pôde ser transferido. Por favor, corrija os erros e tente novamente.
+      delete_restriction_error: Não é possível excluir o registro.
+      gateway_error: "Houve um problema com o gateway de pagamento: %{text}"
+      invalid_api_key: Chave de API inválida (%{key}) especificada.
+      invalid_resource: Recurso inválido. Por favor, corrija os erros e tente novamente.
+      invalid_taxonomy_id: ID de taxonomia inválido.
+      must_specify_api_key: Você deve especificar uma chave de API.
+      order:
+        expected_total_mismatch: O total esperado não corresponde ao total real.
+        invalid_shipping_method: Método de envio inválido especificado.
+        quantity_is_not_available: A quantidade não está disponível para itens no seu pedido.
+      payment:
+        credit_over_limit: Este pagamento só pode ser creditado até %{limit}. Por favor, especifique um valor menor ou igual a este número.
+        update_forbidden: Este pagamento não pode ser atualizado porque está %{state}.
+      resource_not_found: O recurso que você estava procurando não foi encontrado.
+      shipment:
+        cannot_ready: Não é possível preparar o envio.
+        transfer_success: Variantes transferidas com sucesso.
+      stock_not_below_zero: O estoque não deve estar abaixo de zero.
+      unauthorized: Você não está autorizado a realizar esta ação.

@@ -1,0 +1,137 @@
+pt-BR:
+  solidus_admin:
+    adjustment_reasons:
+      title: "Razões de Ajuste"
+      destroy:
+        success: "Razões de ajuste removidas com sucesso."
+      create:
+        success: "Razão de ajuste criada com sucesso."
+      update:
+        success: "Razão de ajuste atualizada com sucesso."
+    adjustments:
+      title: "Ajustes"
+      lock:
+        success: "Bloqueado com sucesso"
+      unlock:
+        success: "Desbloqueado com sucesso"
+      destroy:
+        success: "Excluído com sucesso"
+    customers:
+      title: "Clientes"
+      destroy:
+        success: "Cliente removido com sucesso"
+        error: "Não foi possível remover o cliente"
+    errors:
+      authorization:
+        access_denied:
+          title: "Acesso Negado"
+          description: "Você não está autorizado a acessar esta página."
+    line_items:
+      update:
+        success: "Quantidade atualizada com sucesso"
+      create:
+        success: "Variante adicionada ao carrinho com sucesso"
+      destroy:
+        success: "Item removido com sucesso"
+    shipping_methods:
+      title: "Métodos de Envio"
+      destroy:
+        success: "Métodos de envio foram removidos com sucesso."
+    shipping_categories:
+      title: "Categorias de Envio"
+      destroy:
+        success: "Categorias de envio foram removidas com sucesso."
+      create:
+        success: "Categoria de envio foi criada com sucesso."
+      update:
+        success: "Categoria de envio foi atualizada com sucesso."
+    roles:
+      title: "Funções"
+      destroy:
+        success: "Funções foram removidas com sucesso."
+      create:
+        success: "Função foi criada com sucesso."
+      update:
+        success: "Função foi atualizada com sucesso."
+    reimbursement_types:
+      title: "Tipos de Reembolso"
+    return_reasons:
+      title: "Razões de Devolução"
+      destroy:
+        success: "Razões de devolução foram removidas com sucesso."
+      create:
+        success: "Razão de devolução foi criada com sucesso."
+      update:
+        success: "Razão de devolução foi atualizada com sucesso."
+    roles:
+      title: "Funções"
+      destroy:
+        success: "Funções foram removidas com sucesso."
+      create:
+        success: "Função foi criada com sucesso."
+      update:
+        success: "Função foi atualizada com sucesso."
+    shipping_categories:
+      title: "Categorias de Envio"
+      destroy:
+        success: "Categorias de envio foram removidas com sucesso."
+      create:
+        success: "Categoria de envio foi criada com sucesso."
+      update:
+        success: "Categoria de envio foi atualizada com sucesso."
+    shipping_methods:
+      title: "Métodos de Envio"
+      destroy:
+        success: "Métodos de envio foram removidos com sucesso."
+    stock_items:
+      title: "Itens de Estoque"
+    stock_locations:
+      title: "Locais de Estoque"
+      destroy:
+        success: "Locais de estoque foram removidos com sucesso."
+    store_credit_reasons:
+      title: "Razões de Crédito da Loja"
+      destroy:
+        success: "Razões de crédito da loja foram removidas com sucesso."
+      create:
+        success: "Razão de crédito da loja foi criada com sucesso."
+      update:
+        success: "Razão de crédito da loja foi atualizada com sucesso."
+    stores:
+      title: "Lojas"
+      destroy:
+        success: "Lojas foram removidas com sucesso."
+    tax_categories:
+      title: "Categorias de Impostos"
+      destroy:
+        success: "Categorias de impostos foram removidas com sucesso."
+      create:
+        success: "Categoria de imposto foi criada com sucesso."
+      update:
+        success: "Categoria de imposto foi atualizada com sucesso."
+    tax_rates:
+      title: "Taxas de Impostos"
+      destroy:
+        success: "Taxas de impostos foram removidas com sucesso."
+    taxonomies:
+      title: "Taxonomias"
+      destroy:
+        success: "Taxonomias foram removidas com sucesso."
+    users:
+      title: "Usuários"
+      destroy:
+        success: "Usuários foram removidos com sucesso."
+      update_addresses:
+        bill:
+          success: "O endereço de cobrança foi atualizado com sucesso."
+        ship:
+          success: "O endereço de entrega foi atualizado com sucesso."
+        error: "O endereço não pôde ser atualizado."
+      last_login:
+        never: "Nunca"
+        login_time_ago: "%{last_login_time} atrás"
+        invitation_sent: "Convite enviado"
+    zones:
+      title: "Zonas"
+      destroy:
+        success: "Zonas foram removidas com sucesso."
