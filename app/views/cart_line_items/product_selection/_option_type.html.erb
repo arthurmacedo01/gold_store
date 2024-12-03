@@ -2,8 +2,12 @@
 <% option_values(product: product, option_type: option_type).each do |option_value| %>
   <div>
     <label>
-      <%= check_box_tag 'option_value_ids[]', option_value.id, false, id: "option_value_ids_#{option_value.id}", class: 'form-check-input' %>
-      <%= option_value.presentation %> +  <%= number_to_currency(option_value.fee) %>
+      <%= check_box_tag 'option_value_ids[]', option_value.id, false, 
+        id: "option_value_ids_#{option_value.id}", 
+        class: 'form-check-input', 
+        data: { "option-fee-target": "checkbox", fee: option_value.fee }, 
+        "data-action": "option-fee#updatePrice" %>
+      <%= option_value.presentation %> + <%= number_to_currency(option_value.fee) %>
     </label>
   </div>
 <% end %>
