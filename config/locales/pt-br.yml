@@ -1484,7 +1484,7 @@ pt-BR:
         message: Se você recebeu esse email, suas configurações estão corretas!
         subject: Email de teste!
     test_mode: Modo de teste
-    thank_you_for_your_order: Obrigado por sua compra. Por favor, imprima uma cópia desta página de confirmação para seu controle.
+    thank_you_for_your_order: Obrigado por sua compra. Aqui estão as informações do pedido para seu controle.
     there_are_no_items_for_this_order: Não existem itens para esse pedido. Por favor adicione um item ao pedido para continuar.
     there_were_problems_with_the_following_fields: 'Existem problemas com os seguintes campos:'
     this_order_has_already_received_a_refund: Esse pedindo já recebeu um reembolso

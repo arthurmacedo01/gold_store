@@ -5,8 +5,7 @@
     itemtype: 'http://schema.org/Offer'
   }
 %>
-
-<%= form_for :order, url: cart_line_items_path, html: schema_properties, :onload => "setupToCartBtnPriceChangeEvt(#{product.price})" do |f| %>
+<%= form_for :variant, url: cart_line_items_path, html: schema_properties, :onload => "setupToCartBtnPriceChangeEvt(#{product.price})" do |f| %>
   <% if product_variants_with_options(product).any? %>
     <div class="variant-container">
       <% sorted_option_types(product).each_with_index do |option_type, i| %>
@@ -16,9 +15,7 @@
       <% end %>
     </div>
   <% end %>
-
-  <%= render 'cart_line_items/product_variants', product: product %>
-
+  <%= f.hidden_field :product_id, value: product.id %>
   <% if product.price %>
     <%= render 'cart_line_items/product_submit', product: product %>
   <% else %>
