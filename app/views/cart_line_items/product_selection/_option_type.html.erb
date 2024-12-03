@@ -3,7 +3,7 @@
   <div>
     <label>
       <%= check_box_tag 'option_value_ids[]', option_value.id, false, id: "option_value_ids_#{option_value.id}", class: 'form-check-input' %>
-      <%= option_value.presentation %> - Fee: <%= number_to_currency(option_value.fee) %>
+      <%= option_value.presentation %> +  <%= number_to_currency(option_value.fee) %>
     </label>
   </div>
 <% end %>

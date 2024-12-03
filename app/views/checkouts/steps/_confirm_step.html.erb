@@ -11,7 +11,7 @@
     <div class="col-span-full lg:col-start-2 lg:col-span-10 xl:col-start-3 xl:col-span-8">
       <%= render 'checkouts/terms_and_conditions' %>
       <%= label_tag :accept_terms_and_conditions, class: 'checkbox-input mt-3' do %>
-        <%= check_box_tag :accept_terms_and_conditions, 'accepted', false %>
+        <%= check_box_tag :accept_terms_and_conditions, 'accepted', true %>
         <%= t('spree.agree_to_terms_of_service') %>
       <% end %>
     </div>

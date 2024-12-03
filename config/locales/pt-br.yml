@@ -460,6 +460,9 @@ pt-BR:
       refund: Reembolsar
       save: Salvar
       update: Atualizar
+      split: Dividir
+      delete: Excluir
+      ship: Despachar
     activate: Ativar
     active: Ativo
     add: Adicionar
@@ -512,6 +515,8 @@ pt-BR:
         taxonomies: Categorias
         taxons:  Árvores de Categorias
         users: Usuários
+        stock: Estoque
+        settings: Configurações
       order:
         events:
           approve: aprovar
@@ -1053,7 +1058,7 @@ pt-BR:
     orders: Pedidos
     out_of_stock: Esgotado
     overview: Resumo
-    package_from: pacote de
+    package_from: Envio de
     pagination:
       next_page: Próxima Página »
       previous_page: "« Página Anterior"
@@ -1075,7 +1080,7 @@ pt-BR:
     payment_identifier: Identificador de Pagamento
     payment_states:
       balance_due: saldo devedor
-      checkout: comprar
+      checkout: checkout
       completed: completo
       credit_owed: crédito devido
       failed: falhou
@@ -1571,3 +1576,7 @@ pt-BR:
     see_all: Ver todos
     collection: Coleção
     new_arrivals: Novidades
+    add_line_item: Adicionar Item ao Carrinho
+    send_mailer: Enviar
+    inventory_states:
+      on_hand: Em estoque
