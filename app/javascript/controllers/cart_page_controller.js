@@ -1,13 +1,26 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ['updateButton']
+  static targets = ["updateButton"]
 
-  setQuantityToZero(e) {
-    this.element.querySelector(`#${e.params.quantityId}`).value = '0'
+  submitForm(event) {
+    // Find the form element containing the changed input
+    const form = event.target.closest("form");
+    if (form) {
+      form.requestSubmit(); // Submits the form
+    }
+  }
+
+  setQuantityToZero(event) {
+    const quantityField = this.element.querySelector(`#${event.params.quantityId}`);
+    if (quantityField) {
+      quantityField.value = "0";
+    }
   }
 
   disableUpdateButton() {
-    this.updateButtonTarget.setAttribute('disabled', true)
+    if (this.hasUpdateButtonTarget) {
+      this.updateButtonTarget.setAttribute("disabled", true);
+    }
   }
 }
