@@ -33,6 +33,88 @@ pt-BR:
         success: "Variante adicionada ao carrinho com sucesso"
       destroy:
         success: "Item removido com sucesso"
+    menu_item:
+      orders: "Pedidos"
+      products: "Produtos"
+      option_types: "Tipos de Opções"
+      property_types: "Propriedades"
+      taxonomies: "Taxonomias"
+      taxons: "Ordem de Exibição"
+      promotions: "Promoções"
+      promotion_categories: "Categorias de Promoção"
+      stock: "Estoque"
+      users: "Usuários"
+      settings: "Configurações"
+      stores: "Lojas"
+      taxes: "Impostos"
+      checkout: "Reembolsos e Devoluções"
+      shipping: "Envio"
+      zones: "Zonas"
+    option_types:
+      title: "Tipos de Opções"
+      destroy:
+        success: "Os tipos de opções foram removidos com sucesso."
+    orders:
+      title: "Pedidos"
+      update:
+        success: "Pedido atualizado com sucesso"
+        error: "Não foi possível atualizar o pedido"
+    addresses:
+      title: "Endereços"
+      update:
+        success: "O endereço foi atualizado com sucesso."
+      errors:
+        address_type_invalid: "Tipo de endereço inválido. Por favor, selecione endereço de cobrança ou de entrega."
+    payment_methods:
+      title: "Métodos de Pagamento"
+      destroy:
+        success: "Os métodos de pagamento foram removidos com sucesso."
+    products:
+      title: "Produtos"
+      destroy:
+        success: "Os produtos foram removidos com sucesso."
+      discontinue:
+        success: "Os produtos foram descontinuados com sucesso."
+      activate:
+        success: "Os produtos foram ativados com sucesso."
+    properties:
+      title: "Propriedades"
+      destroy:
+        success: "As propriedades foram removidas com sucesso."
+    refund_reasons:
+      title: "Motivos de Reembolso"
+      destroy:
+        success: "Os motivos de reembolso foram removidos com sucesso."
+      create:
+        success: "O motivo de reembolso foi criado com sucesso."
+      update:
+        success: "O motivo de reembolso foi atualizado com sucesso."
+    reimbursement_types:
+      title: "Tipos de Reembolso"
+    return_reasons:
+      title: "Motivos de Devolução"
+      destroy:
+        success: "Os motivos de devolução foram removidos com sucesso."
+      create:
+        success: "O motivo de devolução foi criado com sucesso."
+      update:
+        success: "O motivo de devolução foi atualizado com sucesso."
+    roles:
+      title: "Funções"
+      destroy:
+        success: "As funções foram removidas com sucesso."
+      create:
+        success: "A função foi criada com sucesso."
+      update:
+        success: "A função foi atualizada com sucesso."
+    shipping_categories:
+      title: "Categorias de Envio"
+      destroy:
+        success: "As categorias de envio foram removidas com sucesso."
+      create:
+        success: "A categoria de envio foi criada com sucesso."
+      update:
+        success: "A categoria de envio foi atualizada com sucesso."
     shipping_methods:
       title: "Métodos de Envio"
       destroy:

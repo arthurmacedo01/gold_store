@@ -1,4 +1,8 @@
 pt-BR:
+  number:
+    currency:
+      format:
+        separator: ","
   time:
     formats:
       short: "%H:%M" # Example: 14:30 (24-hour clock format)

@@ -1,0 +1,6 @@
+pt-BR:
+  solidus_admin:
+    promotion_categories:
+      title: "Categorias de Promoções"
+      destroy:
+        success: "As categorias de promoções foram removidas com sucesso."

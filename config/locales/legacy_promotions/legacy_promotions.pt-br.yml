@@ -1,0 +1,105 @@
+pt-BR:
+  solidus_admin:
+    menu_item:
+      legacy_promotions: "Promoções"
+      legacy_promotion_categories: "Categorias de Promoções"
+  spree:
+    admin:
+      promotion_status:
+        active: "Ativo"
+        expired: "Expirado"
+        inactive: "Inativo"
+        not_started: "Não iniciado"
+      promotions:
+        actions:
+          calculator_label: "Calculado por"
+        activations_edit:
+          auto: "Todos os pedidos tentarão usar esta promoção"
+          multiple_codes_html: "Esta promoção utiliza %{count} códigos promocionais"
+          single_code_html: 'Esta promoção utiliza o código promocional: <code>%{code}</code>'
+        activations_new:
+          auto: "Aplicar a todos os pedidos"
+          multiple_codes: "Múltiplos códigos promocionais"
+          single_code: "Código promocional único"
+        form:
+          activation: "Ativação"
+          expires_at_placeholder: "Nunca"
+          general: "Geral"
+          starts_at_placeholder: "Imediatamente"
+      tab:
+        legacy_promotions: "Promoções"
+        legacy_promotion_categories: "Categorias de Promoções"
+    back_to_promotion_categories_list: "Voltar para a lista de categorias de promoções"
+    back_to_promotions_list: "Voltar para a lista de promoções"
+    base_amount: "Valor Base"
+    choose_promotion_action: "Escolher Ação"
+    choose_promotion_rule: "Escolher Regra"
+    create_promotion_code: "Criar código promocional"
+    current_promotion_usage: 'Uso atual: %{count}'
+    discount_rules: "Regras de Desconto"
+    download_promotion_codes_list: "Baixar lista de códigos"
+    editing_promotion: "Editando Promoção"
+    editing_promotion_category: "Editando Categoria de Promoção"
+    group_size: "Tamanho do grupo"
+    hints:
+      spree/calculator:
+        promotions: "Usado para determinar o desconto promocional a ser aplicado a um pedido, item ou cobrança de envio."
+      spree/promotion:
+        expires_at: "Determina quando a promoção expira. <br> Se nenhum valor for especificado, a promoção nunca expirará."
+        promo_code_will_be_disabled: "Selecionando esta opção, os códigos promocionais serão desativados para esta promoção porque todas as suas regras/ações serão aplicadas automaticamente a todos os pedidos."
+        starts_at: "Determina quando a promoção pode ser aplicada aos pedidos. <br> Se nenhum valor for especificado, a promoção estará disponível imediatamente."
+    invalid_promotion_action: "Ação promocional inválida."
+    invalid_promotion_rule: "Regra promocional inválida."
+    manage_promotion_categories: "Gerenciar Categorias de Promoções"
+    match_choices:
+      all: "Todos"
+      none: "Nenhum"
+    new_promotion: "Nova Promoção"
+    new_promotion_category: "Nova Categoria de Promoção"
+    new_promotion_code_batch: "Novo Lote de Códigos Promocionais"
+    no_actions_added: "Nenhuma ação adicionada"
+    no_rules_added: "Nenhuma regra adicionada"
+    no_promotions_found: "Nenhuma promoção encontrada"
+    product_rule:
+      choose_products: "Escolher produtos"
+      label: "O pedido deve conter %{select} destes produtos"
+      match_all: "todos"
+      match_any: "pelo menos um"
+      match_none: "nenhum"
+      product_source:
+        group: "De grupo de produtos"
+        manual: "Escolher manualmente"
+    promotion: "Promoção"
+    promotion_action: "Ação Promocional"
+    promotion_actions: "Ações"
+    promotion_form:
+      match_policies:
+        all: "Atender todas estas regras"
+        any: "Atender qualquer uma destas regras"
+    promotion_rule: "Regra Promocional"
+    promotion_successfully_created: "Promoção criada com sucesso!"
+    promotion_uses: "Usos da Promoção"
+    promotionable: "Promovível"
+    promotions: "Promoções"
+    rules: "Regras"
+    store_rule:
+      choose_stores: "Escolher Lojas"
+    taxon_rule:
+      choose_taxons: "Escolher taxonomias"
+      label: "O pedido deve conter %{select} destas taxonomias"
+      match_all: "todas"
+      match_any: "pelo menos uma"
+      match_none: "nenhuma"
+    tiers: "Níveis"
+    promotion_code_batches:
+      errored: 'Erro: %{error}'
+      finished: "Todos os %{number_of_codes} códigos foram criados."
+      processing: 'Processando: %{number_of_codes_processed} / %{number_of_codes}'
+    user_role_rule:
+      choose_roles: "Escolher Funções"
+      label: "O usuário deve conter %{select} destas funções"
+      match_all: "todas"
+      match_any: "pelo menos uma"
+    user_rule:
+      choose_users: "Escolher Usuários"
+    view_promotion_codes_list: "Visualizar lista de códigos"

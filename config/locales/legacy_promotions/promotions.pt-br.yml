@@ -1,0 +1,6 @@
+pt-BR:
+  solidus_admin:
+    promotions:
+      title: "Promoções"
+      destroy:
+        success: "As promoções foram removidas com sucesso."
