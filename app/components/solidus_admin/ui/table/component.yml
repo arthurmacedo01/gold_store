@@ -1,0 +1,11 @@
+pt-BR:
+  no_resources_found: "Nenhum %{resources} encontrado"
+  rows_selected: 'selecionado'
+  select_all: 'Selecionar todos'
+  select_row: 'Selecionar linha'
+  filter: 'Filtrar'
+  search_placeholder: 'Pesquisar todos os %{resources}'
+  action_confirmation: 'Você tem certeza de que deseja %{action} ${count} ${resource}?'
+  refine_search: 'Refinar busca'
+  batch_actions: 'Ações em lote'
+  cancel: 'Cancelar'
