@@ -4,7 +4,7 @@ SolidusAdmin::Config.configure do |config|
   # Path to the logo used in the admin interface.
   #
   # It needs to be a path to an image file accessible by Sprockets.
-  # config.logo_path = "my_own_logo.svg"
+  config.logo_path = "my_own_logo.svg"
 
   # Add custom folder paths to watch for changes to trigger a cache sweep forcing a
   # regeneration of the importmap.

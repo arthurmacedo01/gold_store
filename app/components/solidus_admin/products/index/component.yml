@@ -1,0 +1,14 @@
+pt-BR:
+  image: 'Imagem'
+  batch_actions:
+    discontinue: 'Descontinuar'
+    activate: 'Ativar'
+  filters:
+    with_deleted: Incluir excluídos
+  scopes:
+    all: Todos
+    available: Disponível
+    discontinued: Descontinuado
+    in_stock: Em estoque
+    out_of_stock: Fora de estoque
+    deleted: Excluído

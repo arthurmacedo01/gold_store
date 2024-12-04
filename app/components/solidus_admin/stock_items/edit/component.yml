@@ -1,0 +1,10 @@
+pt-BR:
+  submit: "Salvar"
+  cancel: "Cancelar"
+  title: "Editar Níveis de Estoque"
+  quantity_adjustment: "Ajuste de Quantidade"
+  quantity_adjustment_hint_html: |
+    Insira um número positivo para aumentar o nível de estoque ou um número negativo para diminuir o nível de estoque.
+  backorderable_hint_html: |
+    Habilite para permitir que os clientes façam pedidos mesmo quando o produto estiver fora de estoque.<br>
+    Ao pedir o produto, os clientes serão informados de que o produto será entregue em uma data posterior, assim que estiver disponível novamente.

@@ -10,7 +10,7 @@ module ProductOptionsHelper
   end
 
   def sorted_option_types(product)
-    product.option_types.sort_by(&:position)
+    product.option_values.includes(:option_type).reorder(:position).map(&:option_type).uniq
   end
 
   # move to model

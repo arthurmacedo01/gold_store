@@ -1,0 +1,10 @@
+pt-BR:
+  filters:
+    stock_locations: Localizações de Estoque
+    variants: Variantes
+  scopes:
+    all_stock_items: Todos
+    back_orderable: Aceita Encomenda
+    out_of_stock: Fora de Estoque
+    low_stock: Estoque Baixo
+    in_stock: Em Estoque

@@ -1,0 +1,20 @@
+pt-BR:
+  columns:
+    items:
+      one: 1 Item
+      other: '%{count} Itens'
+  filters:
+    status: Status
+    store: Loja
+    shipment_state: Estado do Envio
+    payment_state: Estado do Pagamento
+    promotions: Promoções
+  date:
+    formats:
+      short: '%d %b %y'
+  scopes:
+    all_orders: Todos
+    canceled: Cancelados
+    complete: Completos
+    returned: Devolvidos
+    in_progress: Em andamento  

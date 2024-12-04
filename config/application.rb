@@ -10,6 +10,7 @@ module GoldStore
   class Application < Rails::Application
     # Set default locale to Brazilian Portuguese
     config.i18n.default_locale = :'pt-BR'
+    config.time_zone = "Brasilia"
     config.active_job.queue_adapter = :sidekiq
 
     if defined?(FactoryBotRails)

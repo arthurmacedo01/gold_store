@@ -5,13 +5,16 @@ pt-BR:
         separator: ","
   time:
     formats:
-      short: "%H:%M" # Example: 14:30 (24-hour clock format)
+      short: "%d/%m/%y %-H:%M"
       solidus:
         long: "%d de %B de %Y às %H:%M"
+        short: "%d/%m/%Y %-H:%M"
       pm: "%d de %B de %Y às %H:%M"
   date:
     formats:
       default: "%d/%m/%Y" # Example format: DD/MM/YYYY
+      formats:
+        short: '%d %b %y'
     abbr_day_names: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"]
     month_names:
       [
@@ -38,3 +41,4 @@ pt-BR:
       about_x_hours:
         one: "há cerca de uma hora"
         other: "há cerca de %{count} horas"
+

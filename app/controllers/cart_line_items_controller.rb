@@ -27,20 +27,19 @@ class CartLineItemsController < StoreController
     if variant.nil?
       # Create the variant with the provided params
       variant = Spree::Variant.create!(variant_params)
-
       # Associate the option values with the variant
       variant.option_values << option_values
-
-      # Calculate the new price
-      new_amount = variant.price + option_values.sum(:fee)
-
-      # Create or update the price for the variant
-      price = Spree::Price.find_or_initialize_by(variant_id: variant.id)
-      price.update!(amount: new_amount)
-
-      # Reload the variant to reflect the updated price
-      variant.reload
     end
+
+    # Calculate the new price
+    new_amount = variant.product.price + option_values.sum(:fee)
+
+    # Create or update the price for the variant
+    price = Spree::Price.find_or_initialize_by(variant_id: variant.id)
+    price.update!(amount: new_amount) if price.amount != new_amount
+
+    # Reload the variant to reflect the updated price
+    variant.reload
 
 
     quantity = params[:quantity].present? ? params[:quantity].to_i : 1
