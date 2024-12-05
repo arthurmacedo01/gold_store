@@ -36,7 +36,8 @@ module GoldStore
       end
     end
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.2
+    # config.load_defaults 7.2
+    config.load_defaults 7.0
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
@@ -50,5 +51,6 @@ module GoldStore
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.eager_load_paths << Rails.root.join("app/models/spree").to_s
   end
 end
