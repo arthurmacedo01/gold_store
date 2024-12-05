@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_05_185833) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -326,7 +326,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
     t.integer "position", default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.bigint "store_id"
     t.index ["position"], name: "index_spree_option_types_on_position"
+    t.index ["store_id"], name: "index_spree_option_types_on_store_id"
   end
 
   create_table "spree_option_values", id: :serial, force: :cascade do |t|
@@ -535,10 +537,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
     t.boolean "promotionable", default: true
     t.string "meta_title"
     t.datetime "discontinue_on", precision: nil
+    t.bigint "store_id"
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["name"], name: "index_spree_products_on_name"
     t.index ["slug"], name: "index_spree_products_on_slug", unique: true
+    t.index ["store_id"], name: "index_spree_products_on_store_id"
   end
 
   create_table "spree_products_taxons", id: :serial, force: :cascade do |t|
@@ -659,6 +663,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
     t.string "presentation", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.bigint "store_id"
+    t.index ["store_id"], name: "index_spree_properties_on_store_id"
   end
 
   create_table "spree_property_prototypes", id: :serial, force: :cascade do |t|
@@ -923,9 +929,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
     t.datetime "updated_at"
     t.boolean "backorderable", default: false
     t.datetime "deleted_at", precision: nil
+    t.bigint "store_id"
     t.index ["deleted_at"], name: "index_spree_stock_items_on_deleted_at"
     t.index ["stock_location_id", "variant_id"], name: "stock_item_by_loc_and_var_id"
     t.index ["stock_location_id"], name: "index_spree_stock_items_on_stock_location_id"
+    t.index ["store_id"], name: "index_spree_stock_items_on_store_id"
     t.index ["variant_id", "stock_location_id"], name: "index_spree_stock_items_on_variant_id_and_stock_location_id", unique: true, where: "(deleted_at IS NULL)"
   end
 
@@ -1098,7 +1106,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "position", default: 0
+    t.bigint "store_id"
     t.index ["position"], name: "index_spree_taxonomies_on_position"
+    t.index ["store_id"], name: "index_spree_taxonomies_on_store_id"
   end
 
   create_table "spree_taxons", id: :serial, force: :cascade do |t|
@@ -1119,10 +1129,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
     t.string "meta_description"
     t.string "meta_keywords"
     t.integer "depth"
+    t.bigint "store_id"
     t.index ["lft"], name: "index_spree_taxons_on_lft"
     t.index ["parent_id"], name: "index_taxons_on_parent_id"
     t.index ["permalink"], name: "index_taxons_on_permalink"
     t.index ["rgt"], name: "index_spree_taxons_on_rgt"
+    t.index ["store_id"], name: "index_spree_taxons_on_store_id"
     t.index ["taxonomy_id"], name: "index_taxons_on_taxonomy_id"
   end
 
@@ -1282,10 +1294,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
   add_foreign_key "solidus_stripe_payment_intents", "spree_orders", column: "order_id"
   add_foreign_key "solidus_stripe_payment_intents", "spree_payment_methods", column: "payment_method_id"
   add_foreign_key "solidus_stripe_slug_entries", "spree_payment_methods", column: "payment_method_id"
+  add_foreign_key "spree_option_types", "spree_stores", column: "store_id"
   add_foreign_key "spree_orders_promotions", "spree_orders", column: "order_id", on_delete: :cascade, validate: false
+  add_foreign_key "spree_products", "spree_stores", column: "store_id"
   add_foreign_key "spree_promotion_code_batches", "spree_promotions", column: "promotion_id"
   add_foreign_key "spree_promotion_codes", "spree_promotion_code_batches", column: "promotion_code_batch_id"
+  add_foreign_key "spree_properties", "spree_stores", column: "store_id"
+  add_foreign_key "spree_stock_items", "spree_stores", column: "store_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_categories", column: "tax_category_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_rates", column: "tax_rate_id"
+  add_foreign_key "spree_taxonomies", "spree_stores", column: "store_id"
+  add_foreign_key "spree_taxons", "spree_stores", column: "store_id"
   add_foreign_key "spree_wallet_payment_sources", "spree_users", column: "user_id"
 end
