@@ -10,3 +10,5 @@
 Spree::Core::Engine.load_seed
 Spree::Auth::Engine.load_seed
 SolidusStripe::Engine.load_seed
+
+Spree::Role.where(name: 'store_manager').first_or_create!
