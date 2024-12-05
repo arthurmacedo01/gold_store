@@ -832,7 +832,7 @@ pt-BR:
     add_stock: Adicionar Estoque
     add_stock_management: Adicionar Gerenciamento de Estoque
     add_taxon: Adicionar Táxon
-    add_to_cart: Adicionar ao Carrinho
+    add_to_cart: Adicionar
     add_to_stock_location: Selecionar local para propagar estoque
     add_variant: Adicionar Variante
     add_variant_properties: Adicionar Propriedades da Variante
@@ -1300,7 +1300,7 @@ pt-BR:
     events:
       spree:
         cart:
-          add: Adicionar ao carrinho
+          add: Adicionar
         checkout:
           coupon_code_added: Código promocional adicionado
         content:
