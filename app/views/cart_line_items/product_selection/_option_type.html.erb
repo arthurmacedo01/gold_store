@@ -8,7 +8,7 @@
               data: { "option-fee-target": "checkbox",
               fee: option_value.fee,
               action: "option-fee#toggleExclusive option-fee#updatePrice" } %>
-      <%= option_value.presentation %> + <%= number_to_currency(option_value.fee) %>
+      <%= option_value.presentation %> <%= "+ #{number_to_currency(option_value.fee)}" if option_value.fee != 0 %>
     </label>
   </div>
 <% end %>

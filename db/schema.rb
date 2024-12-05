@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_05_012044) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_05_171515) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -336,7 +336,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_012044) do
     t.integer "option_type_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal "fee", precision: 10, scale: 2
+    t.decimal "fee", precision: 10, scale: 2, default: "0.0", null: false
     t.string "currency"
     t.index ["option_type_id"], name: "index_spree_option_values_on_option_type_id"
     t.index ["position"], name: "index_spree_option_values_on_position"
