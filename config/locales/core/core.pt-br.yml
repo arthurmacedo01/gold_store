@@ -1123,7 +1123,7 @@ pt-BR:
     category: Categoria
     character_limit: Limite de 255 caracteres
     charged: Cobrado
-    check: Cheque
+    check: Cash
     check_stock_on_transfer: Verificar estoque na transferência
     checkout: Finalizar Compra
     choose_a_customer: Escolher um Cliente
@@ -2056,7 +2056,7 @@ pt-BR:
         message: Se você recebeu este email, suas configurações de email estão corretas.
         subject: Email de Teste
     test_mode: Modo de Teste
-    thank_you_for_your_order: Obrigado pela sua compra. Por favor, imprima uma cópia desta página de confirmação para seus registros.
+    thank_you_for_your_order: Obrigado pela sua compra.
     theme_changed: Tema Alterado
     there_are_no_items_for_this_order: Não há itens para este pedido. Por favor, adicione um item ao pedido para continuar.
     there_were_problems_with_the_following_fields: Houve problemas com os seguintes campos
