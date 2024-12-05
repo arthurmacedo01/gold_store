@@ -1,4 +1,4 @@
-  # app/models/spree/user_decorator.rb
+  # app/models/user_decorator.rb
 
   module UserDecorator
     def self.prepended(base)

@@ -51,6 +51,6 @@ module GoldStore
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.eager_load_paths << Rails.root.join("app/models/spree").to_s
+    config.eager_load_paths << Rails.root.join("app/models").to_s
   end
 end
