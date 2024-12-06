@@ -9,6 +9,6 @@ module Taxonomies
   protected
 
   def taxonomies
-    @taxonomies ||= Spree::Taxonomy.includes(root: :children)
+    @taxonomies ||= Spree::Taxonomy.where(store_id: current_store.id).includes(root: :children)
   end
 end

@@ -22,7 +22,7 @@ class AutocompleteResultsController < StoreController
   def autocomplete_products
     if params[:keywords].present?
       searcher = build_searcher(params.merge(per_page: 5))
-      searcher.retrieve_products
+      searcher.retrieve_products.where(store_id: current_store.id)
     else
       Spree::Product.none
     end
@@ -31,7 +31,7 @@ class AutocompleteResultsController < StoreController
   def autocomplete_taxons
     if params[:keywords].present?
       Spree::Taxon
-        .where(Spree::Taxon.arel_table[:name].matches("%#{params[:keywords]}%"))
+        .where(Spree::Taxon.arel_table[:name].matches("%#{params[:keywords]}%"), store_id: current_store.id)
         .limit(5)
     else
       Spree::Taxon.none

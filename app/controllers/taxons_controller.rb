@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 class TaxonsController < StoreController
-  helper 'spree/taxons', 'spree/products', 'taxon_filters'
+  helper "spree/taxons", "spree/products", "taxon_filters"
 
-  before_action :load_taxon, only: [:show]
+  before_action :load_taxon, only: [ :show ]
 
   respond_to :html
 
   def show
     @searcher = build_searcher(params.merge(taxon: @taxon.id, include_images: true))
-    @products = @searcher.retrieve_products
+    @products = @searcher.retrieve_products.where(store_id: current_store.id)
   end
 
   private
 
   def load_taxon
-    @taxon = Spree::Taxon.find_by!(permalink: params[:id])
+    @taxon = Spree::Taxon.find_by!(permalink: params[:id],)
   end
 
   def accurate_title

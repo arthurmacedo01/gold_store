@@ -9,19 +9,22 @@ class CartLineItemsController < StoreController
 
   # Adds a new item to the order (creating a new order if none already exists)
   def create
-    # Fetch the option_values based on the provided IDs
+    product_variants = Spree::Variant.where(variant_params)
+
     option_value_ids = Array(params[:option_value_ids]) # Ensure it's an array
     option_values = Spree::OptionValue.where(id: option_value_ids) # Fetch valid option values
 
-    # Check if a variant with these exact option_values already exists
-    variant = Spree::Variant
-                      .joins(:option_values)
-                      .where(option_values: { id: option_value_ids })
-                      .group("spree_variants.id")
-                      .having("COUNT(option_values.id) = ?", option_value_ids.size)
-                      .having("array_agg(option_values.id ORDER BY option_values.id) = ARRAY[?]::integer[]", option_value_ids.sort)
-                      .first
-
+    if option_values.present?
+      variant = product_variants
+                        .joins(:option_values)
+                        .where(option_values: { id: option_value_ids })
+                        .group("spree_variants.id")
+                        .having("COUNT(option_values.id) = ?", option_value_ids.size)
+                        .having("array_agg(option_values.id ORDER BY option_values.id) = ARRAY[?]::integer[]", option_value_ids.sort)
+                        .first
+    else
+      variant = product_variants.first
+    end
 
     # If no variant matches, create a new one
     if variant.nil?
