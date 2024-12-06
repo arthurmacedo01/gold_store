@@ -180,7 +180,7 @@
           <%= f.field_hint :tax_category, default_tax_category: @default_tax_category&.name %>
           <%= f.collection_select(:tax_category_id, @tax_categories, :id, :name, { include_blank: t('spree.match_choices.none') }, { class: 'custom-select' }) %>
           <%= f.error_message_on :tax_category %>
-          <%= f.hidden_field :store_id, value: current_spree_user.store.id %>
+          <%= f.hidden_field :store_id, value: current_spree_user.store_id %>
         <% end %>
       </div>
     </div>
