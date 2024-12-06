@@ -30,7 +30,7 @@ class SolidusAdmin::Layout::Navigation::Component < SolidusAdmin::BaseComponent
     items.reject! { |item| item[:key] == :settings || item[:key] == "legacy_promotions" }
 
     items.reject do |item|
-      item[:key] == :properties || (item[:children] ||= []).any? && (item[:children] = reject_leaf_properties(item[:children])).empty?
+      item[:key] == :display_order || item[:key] == :properties || (item[:children] ||= []).any? && (item[:children] = reject_leaf_properties(item[:children])).empty?
     end
   end
 end
