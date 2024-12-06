@@ -28,14 +28,15 @@ class SolidusAdmin::Layout::Navigation::Component < SolidusAdmin::BaseComponent
 
   def reject_leaf_properties(items)
     items.map do |item|
-      next if item[:key] == :settings || item[:key] == "legacy_promotions"
+      next if item[:key] == "legacy_promotions"
       # Recursively process children
       children = item[:children]&.map { |child| reject_leaf_properties([ child ]) }.flatten || []
 
       puts item[:key]
 
+
       # Only include items that don't match the reject criteria
-      unless item[:key] == :display_order || item[:key] == :properties
+      unless item[:key] == :display_order || item[:key] == :properties || item[:key] == :stores || item[:key] == :taxes || item[:key] == :checkout || item[:key] == :zones
 
         item.merge(children: children)
       end

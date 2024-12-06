@@ -29,13 +29,18 @@ module GoldStore
         can :manage, Spree::Taxonomy, store_id: [ nil, current_user.store_id ]
         cannot :manage, Spree::Taxon
         can :manage, Spree::Taxon, store_id: [ nil, current_user.store_id ]
+        cannot :manage, Spree::ShippingMethod
+        can :manage, Spree::ShippingMethod do |shipping_method|
+          shipping_method.stores.empty? || shipping_method.stores.ids.include?(current_user.store_id)
+        end
 
+        cannot :manage, Spree::StockLocation
+        cannot :manage, Spree::ShippingCategory
         cannot :manage, Spree::Property
         cannot :manage, Spree::Role
         cannot :manage, Spree::Store
         cannot :manage, Spree::PaymentMethod
         cannot :manage, Spree::Zone
-        cannot :manage, Spree::ShippingMethod
         cannot :manage, Spree::RefundReason
         cannot :manage, Spree::TaxCategory
       end

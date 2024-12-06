@@ -1,12 +1,12 @@
-en:
-  title: "Users / %{email}"
-  account: Account
-  addresses: Addresses
-  order_history: Order History
-  items: Items
-  store_credit: Store Credit
-  last_active: Last Active
-  create_order_for_user: Create order for this user
-  update: Update
-  cancel: Cancel
-  back: Back
+pt-BR:
+  title: "Usuários / %{email}"
+  account: Conta
+  addresses: Endereços
+  order_history: Histórico de Pedidos
+  items: Itens
+  store_credit: Crédito na Loja
+  last_active: Última Atividade
+  create_order_for_user: Criar pedido para este usuário
+  update: Atualizar
+  cancel: Cancelar
+  back: Voltar
