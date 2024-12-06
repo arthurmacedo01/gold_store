@@ -19,7 +19,8 @@ module GoldStore
         cannot :manage, Spree::Order
         can :manage, Spree::Order, store_id: [ nil, current_user.store_id ]
         cannot :manage, Spree::User
-        can :manage, Spree::User, store_id: current_user.store_id
+        can :manage, Spree::User, store_id: [ current_user.store_id ]
+        can :manage, Spree::User, orders: { store_id: current_user.store_id }
         cannot :manage, Spree::OptionType
         can :manage, Spree::OptionType, store_id: [ nil, current_user.store_id ]
         cannot :manage, Spree::StockItem
