@@ -2,7 +2,7 @@
   <div class="col-6">
     <% if can? :show, Spree::Store %>
       <%= f.label :store %>
-      <%= f.number_field :store_id, value: current_spree_user.store.id %>
+      <%= f.number_field :store_id, value: current_spree_user.store_id %>
     <% else %>
       <%= f.hidden_field :store_id, value: current_spree_user.store.id %>
       <input type="hidden" name="user[spree_role_ids][]" id="user_spree_role_admin" value="<%= Spree::Role.where(name: "store_manager").first.id%>">
