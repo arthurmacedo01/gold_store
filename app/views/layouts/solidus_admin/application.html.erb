@@ -20,7 +20,7 @@
     <div class="flex gap-0">
       <div class="min-w-[240px] border-r border-r-gray-100 relative">
         <div class="min-h-screen top-0 sticky flex">
-          <%= render component("layout/navigation").new(store: current_store) %>
+          <%= render component("layout/navigation").new(current_user: current_solidus_admin_user, store: current_store) %>
         </div>
       </div>
       <main id="main" class="flex-grow">
