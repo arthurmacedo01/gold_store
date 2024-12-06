@@ -28,7 +28,7 @@ class SolidusAdmin::Layout::Navigation::Component < SolidusAdmin::BaseComponent
 
   def reject_leaf_properties(items)
     items.map do |item|
-      next if item[:key] == "legacy_promotions"
+      next if item[:key] == "legacy_promotions" || item[:key] == :settings
       # Recursively process children
       children = item[:children]&.map { |child| reject_leaf_properties([ child ]) }.flatten || []
 
