@@ -1,8 +1,11 @@
 <div data-hook="admin_user_form_fields" class="row">
   <div class="col-6">
     <% if can? :show, Spree::Store %>
-      <%= f.label :store %>
-      <%= f.number_field :store_id, value: current_spree_user.store_id %>
+      <%= f.label :store %>      
+      <%= f.select :store_id, 
+             options_from_collection_for_select(Spree::Store.all, :id, :name, current_spree_user.store_id), 
+             prompt: t("helpers.select.prompt"), 
+             class: "form-control" %>
     <% else %>
       <%= f.hidden_field :store_id, value: current_spree_user.store.id %>
       <input type="hidden" name="user[spree_role_ids][]" id="user_spree_role_admin" value="<%= Spree::Role.where(name: "store_manager").first.id%>">

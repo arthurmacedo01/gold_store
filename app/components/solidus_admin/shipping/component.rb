@@ -14,17 +14,17 @@ class SolidusAdmin::Shipping::Component < SolidusAdmin::UI::Pages::Index::Compon
         text: Spree::ShippingMethod.model_name.human.pluralize,
         href: solidus_admin.shipping_methods_path,
         current: model_class == Spree::ShippingMethod
+      },
+      {
+        text: Spree::ShippingCategory.model_name.human.pluralize,
+        href: solidus_admin.shipping_categories_path,
+        current: model_class == Spree::ShippingCategory
+      },
+      {
+        text: Spree::StockLocation.model_name.human.pluralize,
+        href: solidus_admin.stock_locations_path,
+        current: model_class == Spree::StockLocation
       }
-      # {
-      #   text: Spree::ShippingCategory.model_name.human.pluralize,
-      #   href: solidus_admin.shipping_categories_path,
-      #   current: model_class == Spree::ShippingCategory,
-      # },
-      # {
-      #   text: Spree::StockLocation.model_name.human.pluralize,
-      #   href: solidus_admin.stock_locations_path,
-      #   current: model_class == Spree::StockLocation,
-      # },
     ]
   end
 end
