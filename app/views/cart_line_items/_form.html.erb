@@ -7,15 +7,13 @@
 %>
 <%= form_for :variant, url: cart_line_items_path, html: schema_properties, :onload => "setupToCartBtnPriceChangeEvt(#{product.price})" do |f| %>
   <div data-controller="option-fee" data-option-fee-base-price-value="<%= product.price %>">
-    <% if product_variants_with_options(product).any? %>
-      <div class="variant-container">
-        <% sorted_option_types(product).each_with_index do |option_type, i| %>
-          <div class="variant-selection mb-2">
-            <%= render 'cart_line_items/product_selection/option_type', product: product, option_type: option_type, index: i %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="variant-container">
+      <% sorted_option_types(product).each_with_index do |option_type, i| %>
+        <div class="variant-selection mb-2">
+          <%= render 'cart_line_items/product_selection/option_type', product: product, option_type: option_type, index: i %>
+        </div>
+      <% end %>
+    </div>
     <%= f.hidden_field :product_id, value: product.id %>
     <% if product.price %>
       <%= render 'cart_line_items/product_submit', product: product %>

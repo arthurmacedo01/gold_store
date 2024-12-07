@@ -10,13 +10,16 @@ module ProductOptionsHelper
   end
 
   def sorted_option_types(product)
-    product.option_values.includes(:option_type).reorder(:position).map(&:option_type).uniq
+    product.option_types.reorder(:position)
+    # .flat_map(&:option_values)
+    # product.option_values.includes(:option_type).reorder(:position).map(&:option_type).uniq
   end
 
   # move to model
   def option_values(product:, option_type:)
-    product.variants.map do |variant|
-      variant.option_values.find { |option_value| option_value.option_type_id == option_type.id }
-    end.compact.uniq
+    # product.variants.map do |variant|
+    #   variant.option_values.find { |option_value| option_value.option_type_id == option_type.id }
+    # end.compact.uniq
+    option_type.option_values
   end
 end
