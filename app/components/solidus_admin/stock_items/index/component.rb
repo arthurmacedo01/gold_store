@@ -19,41 +19,41 @@ class SolidusAdmin::StockItems::Index::Component < SolidusAdmin::UI::Pages::Inde
 
   def scopes
     [
-      { label: t('.scopes.all_stock_items'), name: 'all', default: true },
-      { label: t('.scopes.back_orderable'), name: 'back_orderable' },
-      { label: t('.scopes.out_of_stock'), name: 'out_of_stock' },
-      { label: t('.scopes.low_stock'), name: 'low_stock' },
-      { label: t('.scopes.in_stock'), name: 'in_stock' },
+      { label: t(".scopes.all_stock_items"), name: "all", default: true },
+      { label: t(".scopes.back_orderable"), name: "back_orderable" },
+      { label: t(".scopes.out_of_stock"), name: "out_of_stock" },
+      { label: t(".scopes.low_stock"), name: "low_stock" },
+      { label: t(".scopes.in_stock"), name: "in_stock" }
     ]
   end
 
   def filters
-    [
-      {
-        label: t('.filters.stock_locations'),
-        combinator: 'or',
-        attribute: "stock_location_id",
-        predicate: "eq",
-        options: Spree::StockLocation.all.map do |stock_location|
-          [
-            stock_location.name.titleize,
-            stock_location.id
-          ]
-        end
-      },
-      {
-        label: t('.filters.variants'),
-        combinator: 'or',
-        attribute: "variant_id",
-        predicate: "eq",
-        options: Spree::Variant.all.map do |variant|
-          [
-            variant.descriptive_name,
-            variant.id
-          ]
-        end
-      },
-    ]
+    # [
+    #   {
+    #     label: t('.filters.stock_locations'),
+    #     combinator: 'or',
+    #     attribute: "stock_location_id",
+    #     predicate: "eq",
+    #     options: Spree::StockLocation.all.map do |stock_location|
+    #       [
+    #         stock_location.name.titleize,
+    #         stock_location.id
+    #       ]
+    #     end
+    #   },
+    #   {
+    #     label: t('.filters.variants'),
+    #     combinator: 'or',
+    #     attribute: "variant_id",
+    #     predicate: "eq",
+    #     options: Spree::Variant.all.map do |variant|
+    #       [
+    #         variant.descriptive_name,
+    #         variant.id
+    #       ]
+    #     end
+    #   },
+    # ]
   end
 
   def columns
@@ -65,19 +65,19 @@ class SolidusAdmin::StockItems::Index::Component < SolidusAdmin::UI::Pages::Inde
       stock_location_column,
       back_orderable_column,
       count_on_hand_column,
-      stock_movements_column,
+      stock_movements_column
     ]
   end
 
   def image_column
     {
       col: { class: "w-[72px]" },
-      header: tag.span('aria-label': Spree::Image.model_name.human, role: 'text'),
+      header: tag.span('aria-label': Spree::Image.model_name.human, role: "text"),
       data: ->(stock_item) do
         image = stock_item.variant.gallery.images.first or return
 
         render(
-          component('ui/thumbnail').new(
+          component("ui/thumbnail").new(
             src: image.url(:small),
             alt: stock_item.variant.name
           )
@@ -111,7 +111,7 @@ class SolidusAdmin::StockItems::Index::Component < SolidusAdmin::UI::Pages::Inde
         content_tag(:div, class: "space-y-0.5") do
           safe_join(
             stock_item.variant.option_values.sort_by(&:option_type_name).map do |option_value|
-              render(component('ui/badge').new(name: "#{option_value.option_type_presentation}: #{option_value.presentation}"))
+              render(component("ui/badge").new(name: "#{option_value.option_type_presentation}: #{option_value.presentation}"))
             end
           )
         end
@@ -122,7 +122,7 @@ class SolidusAdmin::StockItems::Index::Component < SolidusAdmin::UI::Pages::Inde
   def stock_location_column
     {
       header: :stock_location,
-      data: ->(stock_item) { stock_item.stock_location.name },
+      data: ->(stock_item) { stock_item.stock_location.name }
     }
   end
 
@@ -143,7 +143,7 @@ class SolidusAdmin::StockItems::Index::Component < SolidusAdmin::UI::Pages::Inde
             _1.stock_location.id,
             q: { variant_sku_eq: _1.variant.sku },
           ),
-          class: 'body-link'
+          class: "body-link"
         )
       end
     }
@@ -153,7 +153,7 @@ class SolidusAdmin::StockItems::Index::Component < SolidusAdmin::UI::Pages::Inde
     {
       header: :back_orderable,
       data: ->(stock_item) do
-        stock_item.backorderable? ? component('ui/badge').yes : component('ui/badge').no
+        stock_item.backorderable? ? component("ui/badge").yes : component("ui/badge").no
       end
     }
   end
