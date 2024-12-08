@@ -46,6 +46,7 @@ module GoldStore
         cannot :manage, Spree::Zone
         cannot :manage, Spree::RefundReason
         cannot :manage, Spree::TaxCategory
+        cannot :manage, Spree::Promotion
       end
     end
   end

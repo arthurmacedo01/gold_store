@@ -36,7 +36,7 @@ class SolidusAdmin::Layout::Navigation::Component < SolidusAdmin::BaseComponent
 
 
       # Only include items that don't match the reject criteria
-      unless item[:key] == :display_order || item[:key] == :properties || item[:key] == :stores || item[:key] == :taxes || item[:key] == :checkout || item[:key] == :zones
+      unless item[:key] == :properties || item[:key] == :stores || item[:key] == :taxes || item[:key] == :checkout || item[:key] == :zones
 
         item.merge(children: children)
       end

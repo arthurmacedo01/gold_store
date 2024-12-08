@@ -438,9 +438,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
     t.boolean "available_to_users", default: true
     t.boolean "available_to_admin", default: true
     t.string "type_before_removal"
-    t.bigint "store_id"
     t.index ["id", "type"], name: "index_spree_payment_methods_on_id_and_type"
-    t.index ["store_id"], name: "index_spree_payment_methods_on_store_id"
   end
 
   create_table "spree_payments", id: :serial, force: :cascade do |t|
@@ -837,8 +835,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
     t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.bigint "store_id"
-    t.index ["store_id"], name: "index_spree_shipping_categories_on_store_id"
   end
 
   create_table "spree_shipping_method_categories", id: :serial, force: :cascade do |t|
@@ -879,8 +875,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
     t.string "carrier"
     t.string "service_level"
     t.boolean "available_to_users", default: true
-    t.bigint "store_id"
-    t.index ["store_id"], name: "index_spree_shipping_methods_on_store_id"
     t.index ["tax_category_id"], name: "index_spree_shipping_methods_on_tax_category_id"
   end
 
@@ -965,10 +959,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
     t.boolean "fulfillable", default: true, null: false
     t.string "code"
     t.boolean "check_stock_on_transfer", default: true
-    t.bigint "store_id"
     t.index ["country_id"], name: "index_spree_stock_locations_on_country_id"
     t.index ["state_id"], name: "index_spree_stock_locations_on_state_id"
-    t.index ["store_id"], name: "index_spree_stock_locations_on_store_id"
   end
 
   create_table "spree_stock_movements", id: :serial, force: :cascade do |t|
@@ -1207,7 +1199,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
     t.datetime "confirmed_at", precision: nil
     t.datetime "confirmation_sent_at", precision: nil
     t.string "unconfirmed_email"
-    t.integer "store_id"
+    t.bigint "store_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
     t.index ["reset_password_token"], name: "index_spree_users_on_reset_password_token_solidus_auth_devise", unique: true
@@ -1294,8 +1286,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
     t.integer "zone_members_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.bigint "store_id"
-    t.index ["store_id"], name: "index_spree_zones_on_store_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -1306,19 +1296,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
   add_foreign_key "solidus_stripe_slug_entries", "spree_payment_methods", column: "payment_method_id"
   add_foreign_key "spree_option_types", "spree_stores", column: "store_id"
   add_foreign_key "spree_orders_promotions", "spree_orders", column: "order_id", on_delete: :cascade, validate: false
-  add_foreign_key "spree_payment_methods", "spree_stores", column: "store_id"
   add_foreign_key "spree_products", "spree_stores", column: "store_id"
   add_foreign_key "spree_promotion_code_batches", "spree_promotions", column: "promotion_id"
   add_foreign_key "spree_promotion_codes", "spree_promotion_code_batches", column: "promotion_code_batch_id"
   add_foreign_key "spree_properties", "spree_stores", column: "store_id"
-  add_foreign_key "spree_shipping_categories", "spree_stores", column: "store_id"
-  add_foreign_key "spree_shipping_methods", "spree_stores", column: "store_id"
   add_foreign_key "spree_stock_items", "spree_stores", column: "store_id"
-  add_foreign_key "spree_stock_locations", "spree_stores", column: "store_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_categories", column: "tax_category_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_rates", column: "tax_rate_id"
   add_foreign_key "spree_taxonomies", "spree_stores", column: "store_id"
   add_foreign_key "spree_taxons", "spree_stores", column: "store_id"
+  add_foreign_key "spree_users", "spree_stores", column: "store_id"
   add_foreign_key "spree_wallet_payment_sources", "spree_users", column: "user_id"
-  add_foreign_key "spree_zones", "spree_stores", column: "store_id"
 end

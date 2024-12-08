@@ -39,7 +39,7 @@ pt-BR:
       option_types: "Tipos de Opções"
       property_types: "Propriedades"
       taxonomies: "Taxonomias"
-      taxons: "Ordem de Exibição"
+      display_order: "Ordem de Exibição"
       promotions: "Promoções"
       promotion_categories: "Categorias de Promoção"
       stock: "Estoque"
