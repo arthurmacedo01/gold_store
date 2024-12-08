@@ -9,10 +9,6 @@ class HomeController < StoreController
     @products = @searcher.retrieve_products
     @products = Spree::Product.available.where(store_id: current_store.id)
 
-    Rails.logger.info("Current Store: #{current_store.inspect}")
-    Rails.logger.info("Products: #{@products.map(&:inspect).join(", ")}")
-
-
     # Split products into groups of 3 for the homepage blocks.
     # You probably want to remove this logic and use your own!
     homepage_groups = @products.in_groups_of(3, false)
