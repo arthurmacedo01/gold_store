@@ -9,6 +9,7 @@ class HomeController < StoreController
     @products = @searcher.retrieve_products
     @products = Spree::Product.available.where(store_id: current_store.id)
 
+
     # Split products into groups of 3 for the homepage blocks.
     # You probably want to remove this logic and use your own!
     homepage_groups = @products.in_groups_of(3, false)
