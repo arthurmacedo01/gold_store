@@ -5,11 +5,11 @@ module SolidusAdmin
     include SolidusAdmin::ControllerHelpers::Search
 
     search_scope(:all, default: true)
-    search_scope(:deleted) { Spree::Product.accessible_by(current_ability).with_discarded.discarded }
-    search_scope(:discontinued) { Spree::Product.accessible_by(current_ability).where(discontinue_on: ...Time.current) }
-    search_scope(:available) { Spree::Product.accessible_by(current_ability).available }
-    search_scope(:in_stock) { Spree::Product.accessible_by(current_ability).where(id: Spree::Variant.in_stock.distinct.select(:product_id)) }
-    search_scope(:out_of_stock) { Spree::Product.accessible_by(current_ability).where.not(id: Spree::Variant.in_stock.distinct.select(:product_id)) }
+    search_scope(:deleted) { _1.with_discarded.discarded }
+    search_scope(:discontinued) { _1.where(discontinue_on: ...Time.current) }
+    search_scope(:available) { _1.available }
+    search_scope(:in_stock) { _1.where(id: Spree::Variant.in_stock.distinct.select(:product_id)) }
+    search_scope(:out_of_stock) { _1.where.not(id: Spree::Variant.in_stock.distinct.select(:product_id)) }
 
     before_action :split_params, only: [ :update ]
 
