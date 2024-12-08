@@ -82,7 +82,7 @@ module Spree
 
       def load_data
         @amount = params[:amount] || load_order.total
-        @payment_methods = Spree::PaymentMethod.where(store_id: current_spree_user.store_id).active.available_to_admin.ordered_by_position
+        @payment_methods = Spree::PaymentMethod.joins(:stores).where(stores: { id: current_spree_user.store_id }).active.available_to_admin.ordered_by_position
         if @payment && @payment.payment_method
           @payment_method = @payment.payment_method
         else
