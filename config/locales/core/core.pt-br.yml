@@ -99,6 +99,7 @@ pt-BR:
       spree/option_value:
         name: Nome
         presentation: Apresentação
+        fee: Adicional
       spree/order:
         additional_tax_total: Imposto
         approved_at: Aprovado em
