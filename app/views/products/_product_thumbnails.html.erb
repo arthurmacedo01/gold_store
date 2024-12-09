@@ -6,8 +6,8 @@
           :li,
           data: { js: 'variant-thumbnail', js_id: image.viewable_id }
         ) do %>
-        <%= link_to image.url(:product), class: thumbnails_class do %>
-          <%= image_tag(image.url(:small))  %>
+        <%= link_to image.url(:product), class: thumbnails_class do %>          
+          <%= image_tag image.attachment.variant(:small) %>
         <% end %>
       <% end %>
     <% end %>

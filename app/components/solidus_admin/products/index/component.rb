@@ -94,7 +94,7 @@ class SolidusAdmin::Products::Index::Component < SolidusAdmin::UI::Pages::Index:
 
         render(
           component("ui/thumbnail").new(
-            src: image.url(:small),
+            src: image.attachment.variant(:small).url,
             alt: product.name
           )
         )

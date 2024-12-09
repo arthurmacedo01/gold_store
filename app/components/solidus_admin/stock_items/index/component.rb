@@ -78,7 +78,7 @@ class SolidusAdmin::StockItems::Index::Component < SolidusAdmin::UI::Pages::Inde
 
         render(
           component("ui/thumbnail").new(
-            src: image.url(:small),
+            src: image.attachment.variant(:small).url,
             alt: stock_item.variant.name
           )
         )
