@@ -5,6 +5,7 @@ class HomeController < StoreController
   respond_to :html
 
   def index
+    Rails.logger.info "request: #{request} servername: #{request.env['SERVER_NAME']}"
     @searcher = build_searcher(params.merge(include_images: true))
     @products = @searcher.retrieve_products
     @products = Spree::Product.available.where(store_id: current_store.id)
