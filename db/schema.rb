@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_09_180044) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -1200,11 +1200,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
     t.datetime "confirmation_sent_at", precision: nil
     t.string "unconfirmed_email"
     t.bigint "store_id"
+    t.bigint "temp_store_id"
+    t.bigint "tmp_store_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
     t.index ["reset_password_token"], name: "index_spree_users_on_reset_password_token_solidus_auth_devise", unique: true
     t.index ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
     t.index ["store_id"], name: "index_spree_users_on_store_id"
+    t.index ["temp_store_id"], name: "index_spree_users_on_temp_store_id"
+    t.index ["tmp_store_id"], name: "index_spree_users_on_tmp_store_id"
   end
 
   create_table "spree_variant_property_rule_conditions", id: :serial, force: :cascade do |t|
@@ -1306,5 +1310,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_174349) do
   add_foreign_key "spree_taxonomies", "spree_stores", column: "store_id"
   add_foreign_key "spree_taxons", "spree_stores", column: "store_id"
   add_foreign_key "spree_users", "spree_stores", column: "store_id"
+  add_foreign_key "spree_users", "spree_stores", column: "temp_store_id"
+  add_foreign_key "spree_users", "spree_stores", column: "tmp_store_id"
   add_foreign_key "spree_wallet_payment_sources", "spree_users", column: "user_id"
 end
