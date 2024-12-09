@@ -22,8 +22,6 @@ class Spree::Admin::UserPasswordsController < Devise::PasswordsController
   def create
     user = Spree::User.find_by(email: params[resource_name][:email])
     user.update(tmp_store_id: current_store.id)
-    Rails.logger.info "User details: #{user.inspect}"
-    Rails.logger.info "current_store: #{current_store}"
 
     self.resource = resource_class.send_reset_password_instructions(params[resource_name])
 
