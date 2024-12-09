@@ -6,7 +6,7 @@ module Spree
       skip_before_action :load_resource, only: :create
       before_action :load_payment_method_types, except: [ :index ]
       before_action :validate_payment_method_type, only: [ :create, :update ]
-      before_action :load_stores, only: [ :new ]
+      before_action :load_stores, only: [ :new, :edit ]
 
       respond_to :html
 
@@ -73,7 +73,7 @@ module Spree
 
       def build_resource
         model_class.new(
-          store_ids: [ Spree::Store.default.id ].compact
+          store_ids: [ store_id = current_spree_user.store_id || Spree::Store.default.id ].compact
         )
       end
 
