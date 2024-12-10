@@ -54,8 +54,7 @@ module Spree
       # If user checks off three different price ranges then the argument passed to
       # below scope would be something like ["$10 - $15", "$15 - $18", "$18 - $20"]
       #
-      Spree::Product.add_search_scope :price_range_any do |*opts|
-        binding.pry
+      Spree::Product.add_search_scope :price_range_any do |*opts|        
         conds = opts.map { |element| Spree::Core::ProductFilters.price_filter[:conds][element] }.reject(&:nil?)
         scope = conds.shift
         conds.each do |new_scope|
@@ -69,7 +68,7 @@ module Spree
         Spree::Money.new(amount)
       end
 
-      def self.price_filter(store_id)
+      def self.price_filter(store_id = nil)
         
         max_price = Spree::Price.joins(variant: { product: :store })
                     .where(spree_stores: { id: store_id })
@@ -111,7 +110,7 @@ module Spree
         Spree::Product.with_property('brand').where(scope)
       end
 
-      def self.brand_filter(store_id)
+      def self.brand_filter(store_id = nil)
         brand_properties = Spree::Property.where(name: 'brand', store_id: store_id )
         brands = brand_properties.any? ? Spree::ProductProperty.where(property_id: brand_properties.ids).pluck(:value).uniq.map(&:to_s) : []
         pp = Spree::ProductProperty.arel_table
