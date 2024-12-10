@@ -112,8 +112,8 @@ module Spree
       end
 
       def self.brand_filter(store_id)
-        brand_property = Spree::Property.find_by(name: 'brand')
-        brands = brand_property ? Spree::ProductProperty.where(property_id: brand_property.id).pluck(:value).uniq.map(&:to_s) : []
+        brand_properties = Spree::Property.where(name: 'brand', store_id: store_id )
+        brands = brand_properties.any? ? Spree::ProductProperty.where(property_id: brand_properties.ids).pluck(:value).uniq.map(&:to_s) : []
         pp = Spree::ProductProperty.arel_table
         conds = Hash[*brands.flat_map { |brand| [brand, pp[:value].eq(brand)] }]
         {
