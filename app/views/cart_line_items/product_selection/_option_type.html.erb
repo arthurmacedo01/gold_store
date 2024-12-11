@@ -1,14 +1,14 @@
 <legend><%= option_type.presentation %></legend>
-<% option_values(product: product, option_type: option_type).each do |option_value| %>
-  <div>
-    <label>
-      <%= check_box_tag 'option_value_ids[]', option_value.id, false, 
-              id: "option_value_ids_#{option_value.id}", 
-              class: 'form-check-input', 
-              data: { "option-fee-target": "checkbox",
-              fee: option_value.fee,
-              action: "option-fee#toggleExclusive option-fee#updatePrice" } %>
-      <%= option_value.presentation %> <%= "+ #{number_to_currency(option_value.fee)}" if option_value.fee != 0 %>
-    </label>
-  </div>
-<% end %>
+<div>
+  <%= select_tag 'option_value_ids[]', 
+    options_for_select(
+      option_values(product: product, option_type: option_type).map { |option_value| 
+        [ "#{option_value.presentation} #{'+ ' + number_to_currency(option_value.fee) if option_value.fee != 0}", option_value.id, 
+          { data: { fee: option_value.fee } } ]
+      }
+    ), 
+    class: 'block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm',
+    id: "option_value_ids_#{option_type.id}",
+    data: { "option-fee-target": "select",
+            action: "option-fee#updatePrice" } %>
+</div>
