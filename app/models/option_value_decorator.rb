@@ -2,7 +2,7 @@
 
   module OptionValueDecorator
     def self.prepended(base)
-      base.validates :free, presence: true
+      base.validates :fee, presence: true
     end
   end
 
