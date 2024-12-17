@@ -20,7 +20,7 @@
         <%= form_for @user, html: { class: "space-y-6 mb-12 col-span-full md:col-span-6" } do |f| %>
 
           <div class="text-input">
-            <%= f.label :email, "#{t("spree.email")}:" %>
+            <%= f.label :email %>
             <%= f.email_field :email %>
           </div>
 
@@ -32,6 +32,52 @@
           <div class="text-input">
             <%= f.label :password_confirmation, "#{t("spree.confirm_password")}:" %>
             <%= f.password_field :password_confirmation %>
+          </div>
+          
+          <!-- New Fields -->
+
+          <h4>Se Pessoa Física</h4>
+
+          <div class="text-input">
+            <%= f.label :full_name %>
+            <%= f.text_field :full_name, placeholder: "John Doe" %>
+          </div>
+
+          <div class="text-input">
+            <%= f.label :date_of_birth %>
+            <%= f.date_field :date_of_birth %>
+          </div>
+
+          <div class="text-input">
+            <%= f.label :cpf%>
+            <%= f.text_field :cpf, placeholder: "123.456.789-00" %>
+          </div>
+
+          <div class="text-input">
+            <%= f.label :rg %>
+            <%= f.text_field :rg, placeholder: "12.345.678-9" %>
+          </div>
+
+          <div class="text-input">
+            <%= f.label :marital_status %>
+            <%= f.select :marital_status, options_for_select(["Solteiro", "Casado", "Divorciado", "Viúvo"], @user.marital_status) %>
+          </div>
+
+          <h4>Se Pessoa Jurídica</h4>
+
+          <div class="text-input">
+            <%= f.label :company_name %>
+            <%= f.text_field :company_name, placeholder: "ABC Ltda." %>
+          </div>
+
+          <div class="text-input">
+            <%= f.label :cnpj %>
+            <%= f.text_field :cnpj, placeholder: "12.345.678/0001-00" %>
+          </div>
+
+          <div class="text-input">
+            <%= f.label :state_registration %>
+            <%= f.text_field :state_registration, placeholder: "123456789" %>
           </div>
 
           <div class="">

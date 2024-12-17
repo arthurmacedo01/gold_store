@@ -27,6 +27,30 @@
           <div class="py-1.5">
             <%= render component("ui/forms/field").text_field(f, :password_confirmation) %>
           </div>
+          <div class="py-1.5">
+            <%= render component("ui/forms/field").text_field(f, :full_name) %>
+          </div>
+          <div class="py-1.5">
+            <%= f.date_field :date_of_birth %>
+          </div>
+          <div class="py-1.5">
+            <%= render component("ui/forms/field").text_field(f, :cpf) %>
+          </div>
+          <div class="py-1.5">
+            <%= render component("ui/forms/field").text_field(f, :rg) %>
+          </div>
+          <div class="py-1.5">
+            <%= f.select :marital_status, options_for_select(["Solteiro", "Casado", "Divorciado", "Viúvo"], @user.marital_status) %>
+          </div>
+          <div class="py-1.5">
+            <%= render component("ui/forms/field").text_field(f, :company_name) %>
+          </div>
+          <div class="py-1.5">
+            <%= render component("ui/forms/field").text_field(f, :cnpj) %>
+          </div>
+          <div class="py-1.5">
+            <%= render component("ui/forms/field").text_field(f, :state_registration) %>
+          </div>
           <% if @user.admin? %>
             <div class="py-1.5">
               <%= render component("ui/checkbox_row").new(options: role_options, row_title: "Roles", form: f, method: "spree_role_ids", layout: :subsection) %>

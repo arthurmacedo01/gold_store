@@ -421,6 +421,14 @@ pt-BR:
         password: Senha
         password_confirmation: Confirmação de Senha
         spree_roles: Funções
+        full_name: Nome Completo
+        date_of_birth: Data de Nascimento
+        cpf: CPF
+        rg: RG
+        marital_status: Estado Civil
+        company_name: Razão Social
+        cnpj: CNPJ
+        state_registration: Inscrição Estadual
       spree/variant:
         cost_currency: Moeda do Custo
         cost_price: Preço de Custo

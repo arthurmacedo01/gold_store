@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_09_180044) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_17_112112) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -1202,6 +1202,14 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_09_180044) do
     t.bigint "store_id"
     t.bigint "temp_store_id"
     t.bigint "tmp_store_id"
+    t.string "full_name"
+    t.date "date_of_birth"
+    t.string "cpf"
+    t.string "rg"
+    t.string "marital_status"
+    t.string "company_name"
+    t.string "cnpj"
+    t.string "state_registration"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
     t.index ["reset_password_token"], name: "index_spree_users_on_reset_password_token_solidus_auth_devise", unique: true
