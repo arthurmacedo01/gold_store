@@ -69,8 +69,9 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 COPY start.sh /usr/bin/start.sh
 
 # Make it executable
+USER root
 RUN chmod +x /usr/bin/start.sh
-
+USER rails
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
