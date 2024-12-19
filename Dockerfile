@@ -64,17 +64,7 @@ USER 1000:1000
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-
-# Copy the script into the image
-COPY start.sh /usr/bin/start.sh
-
-# Make it executable
-USER root
-RUN chmod +x /usr/bin/start.sh
-USER rails
-
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 # CMD ["./bin/rails", "server"]
-CMD ["start.sh"]
-
+CMD ["foreman", "start"]
