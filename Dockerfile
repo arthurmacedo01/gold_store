@@ -36,6 +36,9 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
+# Install foreman globally
+RUN gem install foreman
+
 # Copy application code
 COPY . .
 
@@ -67,3 +70,5 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 # CMD ["./bin/rails", "server"]
+
+CMD ["foreman", "start"]
