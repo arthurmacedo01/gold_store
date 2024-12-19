@@ -528,7 +528,7 @@ GEM
       solidus_core (>= 3.2, < 5)
       solidus_support (~> 0.8)
       stripe (~> 8.0)
-    solidus_support (0.10.3)
+    solidus_support (0.12.0)
     solidus_webhooks (0.4.2)
       solidus_api (>= 2.0.0, < 5)
       solidus_core (>= 2.0.0, < 5)
